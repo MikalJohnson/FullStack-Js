@@ -1,19 +1,14 @@
-// Create an object and an array which we will use in our facebook exercise.
+/*
+Developed by: Mikal Johnson
+This program simulates a very simple login system and displays a newsfeed if the login is successful.
+*/
 
-// 1. Create an object that has properties "username" and "password". Fill those values in with strings.
-let info = {
-    username: "MikalJohnson",
-    password: "Cougars24",
-};
-
-// 2. Create an array which contains the object you have made above and name the array "database".
 let database = [
     {
-        username: info.username,
-        password: info.password
+        username: "Mikal",
+        password: "cougars24"
     }
 ];
-// 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
 let newsfeed = [
     {
         username: "Henry",
@@ -28,3 +23,17 @@ let newsfeed = [
         timeline: "I going to Italy soon"
     }
 ];
+
+let userNameInput = prompt("Please enter username");
+let passwordInput = prompt("Please enter your password");
+
+function signIn(user, pass) {
+    if (user === database[0].username &&
+        pass === database[0].password) {
+        console.log(newsfeed);
+    } else {
+        return "Access Denied";
+    }
+};
+
+console.log(signIn(userNameInput, passwordInput));
